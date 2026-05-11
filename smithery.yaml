@@ -1,0 +1,29 @@
+name: contract-analyzer-mcp
+description: Contract & Legal Document Analyzer MCP server — pure Python NLP with zero external APIs
+version: 1.0.0
+author: Nous Research
+
+entrypoint:
+  command: python
+  args:
+    - server.py
+
+transport:
+  type: stdio
+
+pricing:
+  model: subscription
+  amount: 19
+  currency: USD
+  period: month
+  stripe_url: https://buy.stripe.com/dRm6oJ4Hd2Jugek0wz1oI0m
+
+features:
+  - analyze_contract: Extract parties, dates, terms, clauses with risk levels
+  - compare_contracts: Diff two versions and flag new risks
+  - extract_obligations: List all action items, deadlines, and obligations per party
+  - check_compliance: Check against GDPR, CCPA, SOX, SEC requirements
+
+requirements:
+  - python: ">=3.10"
+  - mcp: ">=1.0.0"
